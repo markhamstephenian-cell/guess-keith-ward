@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guess Keith Ward | A Cosmic Theological Journey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✧</text></svg>">
+</head>
+<body>
+  <!-- Emoji celebration container -->
+  <div id="emoji-celebration" class="emoji-celebration"></div>
+
+  <header class="wrap">
+    <h1>Guess Keith Ward</h1>
+    <p class="sub">Enter the mind of one of Britain's greatest living theologians. Discern his position on the deepest questions of existence.</p>
+  </header>
+
+  <main class="wrap">
+    <section id="screen-list" class="card">
+      <div class="row">
+        <h2>Sacred Inquiries</h2>
+        <button id="btn-refresh" class="btn btn-ghost">Refresh</button>
+      </div>
+      <div id="question-list" class="list"></div>
+    </section>
+
+    <section id="screen-guess" class="card hidden">
+      <button id="btn-back" class="btn btn-ghost">← Return to the Mysteries</button>
+      <h2 id="q-title"></h2>
+      <div id="q-text" class="prose"></div>
+
+      <form id="guess-form" class="choices"></form>
+
+      <div class="row">
+        <button id="btn-submit" class="btn">Seal My Divination</button>
+        <button id="btn-read" class="btn btn-ghost hidden">Reveal Ward's Wisdom</button>
+      </div>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div id="answer-box" class="answer hidden">
+        <h3>Ward's Illumination</h3>
+        <div id="answer-text" class="prose"></div>
+        <div class="answer-footer">
+          <button id="btn-return" class="btn">Return to the Mysteries</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <small>A journey through the theological mind of Keith Ward</small>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
