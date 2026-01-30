@@ -1,0 +1,828 @@
+/*
+ * Guess Keith Ward - Cosmic Supernatural Edition
+ * An Elegant Journey Through Theological Mystery
+ */
+
+/* ========================================
+   CSS Variables - Cosmic Color Palette
+   ======================================== */
+:root {
+    /* Deep cosmic backgrounds */
+    --void-black: #0a0a0f;
+    --cosmic-deep: #0d0d1a;
+    --nebula-dark: #12121f;
+    --astral-shadow: #1a1a2e;
+    --card-bg: rgba(18, 18, 31, 0.95);
+
+    /* Ethereal accent colors */
+    --celestial-gold: #d4af37;
+    --divine-amber: #ffbf00;
+    --starlight: #f0e6d3;
+    --moonbeam: #e8e0d5;
+    --pale-gold: rgba(212, 175, 55, 0.15);
+
+    /* Supernatural purples */
+    --mystic-violet: #7b2cbf;
+    --ethereal-purple: #9d4edd;
+    --transcendent-lavender: #c77dff;
+    --deep-purple: rgba(123, 44, 191, 0.2);
+
+    /* Cosmic blues */
+    --infinite-blue: #1e3a5f;
+    --astral-cyan: #4cc9f0;
+    --nebula-teal: #00b4d8;
+
+    /* Status colors */
+    --correct-glow: #2ecc71;
+    --incorrect-glow: #e74c3c;
+
+    /* Typography */
+    --font-sacred: 'Cormorant Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    --font-ethereal: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+    --font-mystic: 'Cinzel', 'Times New Roman', Times, serif;
+
+    /* Transitions */
+    --transition-ethereal: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-swift: all 0.3s ease-out;
+}
+
+/* ========================================
+   Base & Reset
+   ======================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sacred);
+    background: var(--void-black);
+    color: var(--starlight);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+}
+
+/* ========================================
+   Cosmic Background
+   ======================================== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(30, 58, 95, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%),
+        linear-gradient(180deg, var(--void-black) 0%, var(--cosmic-deep) 50%, var(--nebula-dark) 100%);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, var(--starlight), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, var(--starlight), transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 230px 80px, var(--starlight), transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 370px 50px, var(--starlight), transparent),
+        radial-gradient(2px 2px at 450px 180px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 520px 90px, var(--celestial-gold), transparent),
+        radial-gradient(2px 2px at 590px 140px, rgba(255,255,255,0.6), transparent);
+    background-repeat: repeat;
+    background-size: 600px 400px;
+    animation: twinkle 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.5; }
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+.wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+header.wrap {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+header::before {
+    content: '✧';
+    display: block;
+    font-size: 3rem;
+    color: var(--celestial-gold);
+    text-shadow: 0 0 30px var(--celestial-gold), 0 0 60px rgba(212, 175, 55, 0.5);
+    margin-bottom: 1.5rem;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+h1 {
+    font-family: var(--font-mystic);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--celestial-gold) 0%, var(--starlight) 50%, var(--celestial-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: var(--font-mystic);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--transcendent-lavender);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: var(--font-mystic);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--celestial-gold);
+    margin-bottom: 0.75rem;
+}
+
+.sub {
+    font-family: var(--font-ethereal);
+    font-size: 1rem;
+    color: var(--moonbeam);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   Cards - Ethereal Containers
+   ======================================== */
+.card {
+    background: linear-gradient(
+        160deg,
+        rgba(26, 26, 46, 0.9) 0%,
+        rgba(18, 18, 31, 0.95) 50%,
+        rgba(13, 13, 26, 0.98) 100%
+    );
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+    transition: var(--transition-ethereal);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--celestial-gold), transparent);
+    opacity: 0.6;
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(212, 175, 55, 0.1),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+}
+
+/* ========================================
+   Buttons - Celestial Actions
+   ======================================== */
+.btn {
+    font-family: var(--font-mystic);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--celestial-gold);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-ethereal);
+    background: linear-gradient(135deg, var(--mystic-violet) 0%, var(--ethereal-purple) 100%);
+    color: var(--starlight);
+    box-shadow: 0 4px 20px rgba(123, 44, 191, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(123, 44, 191, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--celestial-gold);
+    box-shadow: none;
+}
+
+.btn-ghost::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--celestial-gold) 0%, var(--divine-amber) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.btn-ghost:hover {
+    color: var(--void-black);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-ghost:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   Question List
+   ======================================== */
+.list {
+    display: grid;
+    gap: 1rem;
+}
+
+.item {
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 95, 0.2) 0%,
+        rgba(26, 26, 46, 0.6) 100%
+    );
+    border: 1px solid rgba(157, 78, 221, 0.2);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-ethereal);
+    position: relative;
+    overflow: hidden;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--mystic-violet), transparent, var(--celestial-gold));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.item:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(157, 78, 221, 0.4);
+    box-shadow:
+        0 20px 50px rgba(123, 44, 191, 0.15),
+        0 0 30px rgba(212, 175, 55, 0.05);
+}
+
+.item:hover::before {
+    opacity: 1;
+}
+
+.item h3 {
+    font-family: var(--font-mystic);
+    font-size: 1rem;
+    color: var(--celestial-gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.item p {
+    font-family: var(--font-sacred);
+    font-size: 0.95rem;
+    color: var(--moonbeam);
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+/* ========================================
+   Row Layout
+   ======================================== */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   Question Detail View
+   ======================================== */
+.prose {
+    font-family: var(--font-sacred);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--starlight);
+    white-space: pre-wrap;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border-left: 3px solid var(--celestial-gold);
+    margin: 1rem 0;
+}
+
+/* ========================================
+   Choices - Sacred Options
+   ======================================== */
+.choices {
+    margin: 1.5rem 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.choice {
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.8) 0%,
+        rgba(18, 18, 31, 0.9) 100%
+    );
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: var(--transition-swift);
+    position: relative;
+}
+
+.choice:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 95, 0.3) 0%,
+        rgba(26, 26, 46, 0.9) 100%
+    );
+}
+
+.choice label {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.choice input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--celestial-gold);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2px;
+    transition: var(--transition-swift);
+}
+
+.choice input[type="radio"]:checked {
+    background: var(--celestial-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.choice input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--void-black);
+    border-radius: 50%;
+}
+
+.choice div {
+    font-family: var(--font-sacred);
+    font-size: 1rem;
+    color: var(--moonbeam);
+    line-height: 1.5;
+}
+
+.choice div strong {
+    color: var(--transcendent-lavender);
+    font-weight: 500;
+}
+
+/* ========================================
+   Feedback - Divine Response
+   ======================================== */
+.feedback {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-sacred);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.1) 0%,
+        rgba(26, 26, 46, 0.9) 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback::before {
+    content: '✦';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--celestial-gold);
+    opacity: 0.5;
+}
+
+.feedback.correct {
+    border-color: rgba(46, 204, 113, 0.4);
+    background: linear-gradient(
+        135deg,
+        rgba(46, 204, 113, 0.15) 0%,
+        rgba(26, 26, 46, 0.9) 100%
+    );
+}
+
+.feedback.incorrect {
+    border-color: rgba(231, 76, 60, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(231, 76, 60, 0.1) 0%,
+        rgba(26, 26, 46, 0.9) 100%
+    );
+}
+
+/* ========================================
+   Claim Box - Champagne Prize
+   ======================================== */
+.claim {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.claim h3 {
+    text-align: center;
+}
+
+.claim .sub {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.grid label {
+    font-family: var(--font-ethereal);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--moonbeam);
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    margin-top: 0.5rem;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 6px;
+    color: var(--starlight);
+    font-family: var(--font-sacred);
+    font-size: 1rem;
+    transition: var(--transition-swift);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--celestial-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+input::placeholder {
+    color: rgba(232, 224, 213, 0.4);
+}
+
+/* ========================================
+   Answer Box - Ward's Wisdom
+   ======================================== */
+.answer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.answer h3 {
+    color: var(--transcendent-lavender);
+    margin-bottom: 1rem;
+}
+
+.answer .prose {
+    border-left-color: var(--ethereal-purple);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.foot {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    margin-top: 2rem;
+}
+
+.foot::before {
+    content: '✧ ✦ ✧';
+    display: block;
+    font-size: 1.25rem;
+    color: var(--celestial-gold);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5em;
+}
+
+.foot small {
+    font-family: var(--font-ethereal);
+    font-size: 0.8rem;
+    color: rgba(232, 224, 213, 0.5);
+    letter-spacing: 0.05em;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ========================================
+   Loading State
+   ======================================== */
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.loading::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-top-color: var(--celestial-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--void-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.5);
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+::selection {
+    background: rgba(157, 78, 221, 0.4);
+    color: var(--starlight);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 640px) {
+    .wrap {
+        padding: 1.5rem;
+    }
+
+    header.wrap {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .row .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.item {
+    animation: fadeIn 0.4s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.item:nth-child(1) { animation-delay: 0.05s; }
+.item:nth-child(2) { animation-delay: 0.1s; }
+.item:nth-child(3) { animation-delay: 0.15s; }
+.item:nth-child(4) { animation-delay: 0.2s; }
+.item:nth-child(5) { animation-delay: 0.25s; }
+.item:nth-child(6) { animation-delay: 0.3s; }
+.item:nth-child(7) { animation-delay: 0.35s; }
+.item:nth-child(8) { animation-delay: 0.4s; }
+.item:nth-child(9) { animation-delay: 0.45s; }
+.item:nth-child(10) { animation-delay: 0.5s; }
+
+/* ========================================
+   Emoji Celebration
+   ======================================== */
+.emoji-celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.floating-emoji {
+    position: absolute;
+    top: -50px;
+    animation: floatDown 2.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes floatDown {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg) scale(0.5);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg) scale(1);
+    }
+}
+
+/* ========================================
+   Result Feedback Styling
+   ======================================== */
+.result-header {
+    font-family: var(--font-mystic);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+.feedback.correct .result-header {
+    color: var(--correct-glow);
+}
+
+.feedback.incorrect .result-header {
+    color: var(--incorrect-glow);
+}
+
+.feedback p {
+    margin-bottom: 0.5rem;
+}
+
+.hint-text {
+    font-style: italic;
+    opacity: 0.9;
+    color: var(--moonbeam);
+}
+
+.correct-answer {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--celestial-gold);
+}
+
+.correct-answer strong {
+    color: var(--transcendent-lavender);
+}
+
+/* ========================================
+   Answer Footer
+   ======================================== */
+.answer-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+}
